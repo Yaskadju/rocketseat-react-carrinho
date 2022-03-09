@@ -89,7 +89,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
       let newCart = cart.map(product => {
         if (productId === product.id) {
-          if (product.amount >= amountStock) {
+          if (product.amount >= amountStock && amount === 1) {
             toast.error("Quantidade solicitada fora de estoque")
             return {
               ...product
